@@ -1,0 +1,26 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <input class="new-todo"
+           placeholder="What needs to be done?"
+           onkeydown={{action handleNewTodoKeyDown}}
+           autofocus>
+  </header>
+
+  <section class="main">
+    <ul id="todo-list" class="todo-list">
+      {{#each todos key="@index" as |todo|}}
+        <todo-item @todo={{todo}}
+          @onDestroy={{action deleteTodo}} />
+      {{/each}}
+    </ul>
+  </section>
+</section>
+
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+  <p>
+    Created by
+    <a href="https://github.com/toranb">Toran Billups</a>
+  </p>
+</footer>

@@ -1,0 +1,9 @@
+<li class="{{if @todo.completed "completed"}}">
+  <div class="view">
+    <input type="checkbox" class="toggle" checked={{@todo.completed}}>
+    <label>{{@todo.text}}</label>
+    <button class="destroy" onclick={{action @onDestroy @todo.id}}></button>
+  </div>
+
+  <input type="text" class="edit js-edit" value={{newTitle}} autofocus>
+</li>

@@ -14,6 +14,6 @@ app.registerInitializer({
   }
 });
 
-app.renderComponent('todomvc-app', containerElement, null);
+app.renderComponent('ui-layout', containerElement, null);
 
 app.boot();
