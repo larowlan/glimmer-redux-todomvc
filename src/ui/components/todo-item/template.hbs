@@ -1,9 +1,9 @@
-<li class="{{if @todo.completed "completed"}}">
+<li class="{{if @todo.completed "completed"}} {{if editing "editing"}}">
   <div class="view">
     <input type="checkbox" class="toggle" checked={{@todo.completed}}>
-    <label>{{@todo.text}}</label>
+    <label ondblclick={{action beginEdit}}>{{@todo.text}}</label>
     <button class="destroy" onclick={{action @onDestroy @todo.id}}></button>
   </div>
 
-  <input type="text" class="edit js-edit" value={{newTitle}} autofocus>
+  <input type="text" class="edit js-edit" value={{newTitle}} onblur={{action commitEdit}} onkeyup={{action handleEditKeyUp}} autofocus>
 </li>

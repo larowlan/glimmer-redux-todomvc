@@ -3,6 +3,7 @@ import { ENTER } from '../../../utils/keys';
 import { connect } from 'glimmer-redux';
 import { getTodos } from '../../../reducers/todos';
 
+const editTodo = (id, text) => dispatch => dispatch({type: 'EDIT_TODO', id, text});
 const addTodo = text => dispatch => dispatch({type: 'ADD_TODO', text});
 const deleteTodo = id => dispatch => dispatch({type: 'DELETE_TODO', id});
 
@@ -28,7 +29,8 @@ const stateToComputed = state => ({
 
 const dispatchToActions = {
   addTodo,
-  deleteTodo
+  deleteTodo,
+  editTodo
 }
 
 export default connect(stateToComputed, dispatchToActions)(LayoutComponent);

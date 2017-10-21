@@ -11,6 +11,7 @@
     <ul id="todo-list" class="todo-list">
       {{#each todos key="@index" as |todo|}}
         <todo-item @todo={{todo}}
+          @onEdit={{action editTodo}}
           @onDestroy={{action deleteTodo}} />
       {{/each}}
     </ul>
