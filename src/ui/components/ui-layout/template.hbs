@@ -12,6 +12,7 @@
       {{#each todos key="@index" as |todo|}}
         <todo-item @todo={{todo}}
           @onEdit={{action editTodo}}
+          @onComplete={{action completeTodo}}
           @onDestroy={{action deleteTodo}} />
       {{/each}}
     </ul>

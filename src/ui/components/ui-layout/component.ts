@@ -6,6 +6,7 @@ import { getTodos } from '../../../reducers/todos';
 const editTodo = (id, text) => dispatch => dispatch({type: 'EDIT_TODO', id, text});
 const addTodo = text => dispatch => dispatch({type: 'ADD_TODO', text});
 const deleteTodo = id => dispatch => dispatch({type: 'DELETE_TODO', id});
+const completeTodo = id => dispatch => dispatch({type: 'COMPLETE_TODO', id});
 
 class LayoutComponent extends Component {
 
@@ -30,7 +31,8 @@ const stateToComputed = state => ({
 const dispatchToActions = {
   addTodo,
   deleteTodo,
-  editTodo
+  editTodo,
+  completeTodo
 }
 
 export default connect(stateToComputed, dispatchToActions)(LayoutComponent);

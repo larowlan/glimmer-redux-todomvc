@@ -1,6 +1,6 @@
 <li class="{{if @todo.completed "completed"}} {{if editing "editing"}}">
   <div class="view">
-    <input type="checkbox" class="toggle" checked={{@todo.completed}}>
+    <input type="checkbox" class="toggle" checked={{@todo.completed}} onchange={{action @onComplete @todo.id}}>
     <label ondblclick={{action beginEdit}}>{{@todo.text}}</label>
     <button class="destroy" onclick={{action @onDestroy @todo.id}}></button>
   </div>
